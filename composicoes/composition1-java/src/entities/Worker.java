@@ -9,18 +9,19 @@ import java.util.List;
 public class Worker {
 
     private String name;
-    private WorkerLevel leve;
+    private WorkerLevel workerLevel;
     private Double baseSalary;
 
     private Department department;
     private List<HourContract> contracts = new ArrayList<>();
 
     public Worker() {
+
     }
 
-    public Worker(String name,WorkerLevel leve,Double baseSalary,Department department) {
+    public Worker(String name,WorkerLevel level,Double baseSalary,Department department) {
         this.name = name;
-        this.leve = leve;
+        this.workerLevel = level;
         this.baseSalary = baseSalary;
         this.department = department;
     }
@@ -33,12 +34,12 @@ public class Worker {
         this.name = name;
     }
 
-    public WorkerLevel getLeve() {
-        return leve;
+    public WorkerLevel getLevel() {
+        return workerLevel;
     }
 
-    public void setLeve(WorkerLevel leve) {
-        this.leve = leve;
+    public void setLeve(WorkerLevel level) {
+        this.workerLevel = level;
     }
 
     public Double getBaseSalary() {
@@ -81,6 +82,8 @@ public class Worker {
 
             if (year == c_year && month == c_month) {
                 sum += c.totalValue();
+
+                break;
             }
         }
         return sum;
